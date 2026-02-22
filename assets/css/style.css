@@ -1,11 +1,109 @@
 body{
-background-color: #E6C363;
+color:#1a403c;
 
 }
 a{
-    color:#5779EB
+    color:#0b1926;
 }
     h1{ 
-        color:#CF5B93;
+        color:#1a403c;
       
     }
+    /*------Global Margin Reset------*/
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-image:url(../img/Skullsnrosesweb4.jpg);
+	background-repeat:repeat-x;
+	text-align: center;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-color: #BF9663;
+	font-size: 20px;
+	line-height: 1.5em;
+}
+#container {
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	background-color: #f2cda0;
+	margin-top: 20px;
+	border: 5px dashed #bf9663;
+    border-radius:15px;
+}
+#header {
+	background-image:url(../img/skullsnsrosesbannerheadlight.jpg);
+height: 120px;
+}
+#header h1 a {
+	display:block;
+	height:120px;
+	text-indent:36%;
+	white-space: nowrap;
+    padding-top:30px;
+
+}
+
+#nav h2 {
+    color:#F2cda0;
+    text-indent:35%;
+}
+#nav {
+	background-color: #1a403c;
+}
+#nav ul {
+	list-style-type: none;
+	margin-left: 10px;
+}
+#nav ul li {
+	display: inline;
+	height: 35px;
+	line-height: 35px;
+    text-decoration: none;
+}
+#nav ul li a {
+	display: list-item;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 18px;
+    list-style-type: none;
+}
+#nav ul li a:link, #nav ul li a:visited {
+	text-decoration: none;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-bottom-color: #567355;
+	color: #f2cda0;
+}
+#nav ul li a:hover {
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-color: #F2cda0;
+}
+#content {
+	margin: 20px;
+}
+#content p {
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+#content dl {
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+footer a{color:#f2cda0}
+footer {
+	color: #f2cDa0;
+	height: 25px;
+}
+#footer h6 {
+	font-size: 12px;
+	line-height: 25px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
