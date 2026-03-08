@@ -19,7 +19,7 @@ html {
 }
 
 main {
-  background-image: url("../img/rebel.jpeg")
+  background-image: url("../img/rebel.jpeg");
 width:80vw;
 margin: 20px auto;
 border: 1px solid #000;  
