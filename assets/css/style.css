@@ -18,10 +18,11 @@ a{
 }
 body {
 	background-image:url(../img/Skullsnrosesweb4.jpg);
-	background-repeat:repeat-x;
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 	text-align: center;
 	font-family: "Eater", serif;
-	background-color: #BF9663;
 	font-size: 20px;
 	line-height: 1.5em;
 }
@@ -39,20 +40,23 @@ body {
 #header {
 	background-image:url(../img/skullsnsrosesbannerheadlight.jpg);
 height: 120px;
+  background-size: cover;
+    background-position: center;
 }
-#header h1 a {
-	display:block;
-	height:50px;
-	text-align: center;
-	white-space: nowrap;
-    padding-top:30px;
 
+#header h1 a {
+    display: inline-block; /* Shrinks the element to the text width */
+    height: auto;          /* Allows the border to sit right under the text */
+    text-align: center;
+    white-space: nowrap;
+    padding-top: 30px;
+    padding-bottom: 15px;   /* Adds a small gap between text and the dots */
+    text-decoration: none;
 }
+
 #header h1 a:hover {
-	color:#1a403c;
-	border-bottom: 10px;
-	border-bottom-style: dotted;
-	border-bottom-color: #1a403c;
+    color: #1a403c;
+    border-bottom: 10px dotted #1a403c; /* Line now matches text length */
 }
 
 #heading2 {
@@ -74,17 +78,18 @@ height: 120px;
 	
 }
 #nav ul li {
-	display: inline;
-	height: 35px;
-	line-height: 35px;
+	display: block;
+	height: auto;
+	line-height: 2rem;
     text-decoration: none;
 }
 #nav ul li a {
-	display: list-item;
-	padding-right: 10px;
-	padding-left: 10px;
-	font-size: 18px;
+	display: inline-block;
+	padding-right: 0px;
+	padding-left: 0px;
+	font-size: 24px;
     list-style-type: none;
+	margin-bottom: 15px;
 }
 #nav ul li a:link, #nav ul li a:visited {
 	text-decoration: none;
