@@ -42,21 +42,26 @@ body {
 height: 120px;
   background-size: cover;
     background-position: center;
+	color:#F2cda0
 }
 
 #header h1 a {
-    display: inline-block; /* Shrinks the element to the text width */
-    height: auto;          /* Allows the border to sit right under the text */
+    display: inline-block; 
+    height: auto;         
     text-align: center;
     white-space: nowrap;
     padding-top: 30px;
-    padding-bottom: 15px;   /* Adds a small gap between text and the dots */
+    padding-bottom: 15px;   
     text-decoration: none;
+}
+
+#header li h2 {
+	color:#F2cda0
 }
 
 #header h1 a:hover {
     color: #1a403c;
-    border-bottom: 10px dotted #1a403c; /* Line now matches text length */
+    border-bottom: 10px dotted #1a403c;
 }
 
 #heading2 {
@@ -67,6 +72,7 @@ height: 120px;
 	padding-bottom:15px;
 }
 #nav {
+
 		font-size: 16px;
 	line-height: 1.5rem;
 	background-color: #1a403c;
@@ -83,6 +89,16 @@ height: 120px;
 	line-height: 2rem;
     text-decoration: none;
 }
+
+#nav li h2{
+	color:#F2cda0;
+	  border: 2px solid #F2cda0;   
+  padding: 10px 20px;     
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+
 #nav ul li a {
 	display: inline-block;
 	padding-right: 0px;
