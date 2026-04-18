@@ -24,8 +24,7 @@ header.container {
   width: 80vw;
   max-width: 600px;
   margin: 40px auto 10px auto;
-  padding: 40 auto 40px auto;
-
+  padding: 40px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,12 +120,9 @@ body {
   border: 1px solid #c0c0c0;
   border-radius: 6px;
 
-  &:nth-child(odd) {
-    background-color: #8fb87f;
-  }
 
   p {
-    color: #fff;
+    color: #cd000f;
     margin: 0;
     text-shadow: 1px 1px #000;
   }
@@ -179,7 +175,7 @@ body {
 
 /* Personal section */
 #personal {
-  border: 2px solid #ffffff;
+  border: 4px solid #ffffff;
   padding: 20px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -363,6 +359,7 @@ h1 {
 main a[href="#top"] {
   display: block;
   text-align: right;
+  margin:10px auto;
 }
 
 /* Footer */
@@ -386,5 +383,219 @@ footer a {
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+h2, h3, h4, h5, h6 {
+  color: #cd000f;
+}
+
+@media screen and (min-width: 768px) {
+
+  header.container {
+    max-width: 900px;
+  }
+  main {
+    max-width: 900px;
+  }
+  .container {
+    padding: 30px;
+  }
+  header.container nav ul {
+    gap: 12px;
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  header.container {
+    max-width: 992px;
+    width: 100%;
+    margin: 20px auto 10px auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header.container h1 {
+    margin: 0;
+  }
+
+  header.container nav ul {
+    width: 100%;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* =========================
+     MAIN GRID
+  ========================= */
+
+  main {
+    max-width: 992px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      "experience experience"
+      "skills skills"
+      "education links"
+      "about personal";
+    gap: 20px;
+  }
+
+  #experience { grid-area: experience; }
+  #skills     { grid-area: skills; }
+  #education  { grid-area: education; }
+  #links      { grid-area: links; }
+  #about      { grid-area: about; }
+  #personal   { grid-area: personal; }
+
+  /* =========================
+     EXPERIENCE
+  ========================= */
+
+  #experience {
+    border: 4px solid #fff;
+    padding: 15px;
+  }
+
+  #experience h2 {
+    text-align: center;
+    margin: 0 0 15px 0;
+    color: #cd000f;
+  }
+
+  .job {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 30px;
+    row-gap: 6px;
+    padding: 14px 0;
+    border-bottom: 1px solid #cd000f;
+    align-items: start;
+  }
+
+  .job-left h3 {
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .job-left p {
+    margin: 4px 0 0 0;
+    line-height: 1.4;
+  }
+
+  .job-right {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .job-right h4 {
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .job-right .date {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  .job-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .job-meta a {
+    color: #cd000f;
+    text-decoration: underline;
+  }
+
+  /* =========================
+     EDUCATION (RESTORED BORDER)
+  ========================= */
+
+  #education {
+    border: 4px solid #fff;
+    padding: 15px;
+    height: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  #education h2 {
+    margin: 0 0 10px 0;
+  }
+
+  #education .certificate {
+    flex: 0 0 220px;
+    max-width: 220px;
+  }
+
+  /* =========================
+     LINKS
+  ========================= */
+
+  #links {
+    border: 4px solid #fff;
+    padding: 15px;
+    height: 100%;
+  }
+
+  #links h2 {
+    margin: 0 0 10px 0;
+  }
+
+  #links .related-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  #links .related-links li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #links .related-links a {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* =========================
+     ABOUT + PERSONAL (FIXED BOX MATCH)
+  ========================= */
+
+  #about,
+  #personal {
+    border: 4px solid #fff;
+    padding: 15px;
+    height: 100%;
+  }
+
+  #personal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #personal h2 {
+    margin: 0;
+    text-align: center;
   }
 }
