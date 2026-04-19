@@ -1,42 +1,26 @@
-/* Global text defaults */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
 body {
   color: #1a403c;
   text-align: center;
   font-family: "Eater", serif;
   font-size: 20px;
   line-height: 1.5em;
-
   background-image: url("../img/Skullsnrosesweb4.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
-  /* Global reset */
-  margin: 0;
-  padding: 0;
 }
 
-/* Reset everything */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* Links */
-a {
-  color: #0b1926;
-}
-
-/* Headings */
-h1 {
-  color: #1a403c;
-}
-
-/* Layout container */
+/* Container */
 #container {
-  max-width: 800px;
-  margin: 20px auto 0 auto;
-  text-align: center;
+  max-width: 992px;
+  margin: 20px auto;
   background-color: #f2cda0;
   border: 5px dashed #bf9663;
   border-radius: 15px;
@@ -48,112 +32,86 @@ h1 {
   height: 120px;
   background-size: cover;
   background-position: center;
-  color: #f2cda0;
 
   h1 {
     a {
       display: inline-block;
-      text-align: center;
-      white-space: nowrap;
-      padding: 30px 0 15px 0;
+      padding: 30px 0 15px;
       text-decoration: none;
+      color: #567355;
+      text-shadow: 3px 3px #0b1926;
 
       &:hover {
         color: #1a403c;
-        border-bottom: 10px dotted #1a403c;
+        border-bottom: 5px dotted #1a403c;
       }
-    }
-  }
-
-  li {
-    h2 {
-      color: #f2cda0;
     }
   }
 }
 
-/* Secondary heading */
+/* Subheading */
 #heading2 {
-  color: #1a403c;
-  text-align: center;
-  font-size: 1rem;
   padding: 15px 0;
 }
 
-/* Navigation */
+/* Grid layout */
 #nav {
-  font-size: 16px;
-  line-height: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
   background-color: #1a403c;
 
-  ul {
-    list-style-type: none;
-    margin-left: 10px;
-    font-family: "Cormorant Garamond", serif;
+  a {
+    display: block;
+    margin: 8px 0;
+    text-decoration: none;
+    color: #0b1926;
+    border-bottom: 2px dotted #0b1926;
 
-    li {
-      display: block;
-      height: auto;
-      line-height: 2rem;
-
-      h2 {
-        color: #f2cda0;
-        border: 2px solid #f2cda0;
-        padding: 10px 20px;
-        display: inline-block;
-        margin-bottom: 10px;
-      }
-
-      a {
-        display: inline-block;
-        padding: 0;
-        font-size: 24px;
-        margin-bottom: 15px;
-        text-decoration: none;
-
-        border-bottom: 4px dotted #0b1926;
-        color: #f2cda0;
-
-        &:hover {
-          border-bottom: 3px dotted #567355;
-        }
-      }
+    &:hover {
+      color: #bf9663;
+      border-bottom: 2px dotted #567355;
     }
   }
 }
 
-/* Content area */
-#content {
-  margin: 20px;
+/* Columns (cards) */
+.column {
+  text-align: center;
+  border: 4px dashed #567355;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f2cda0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 
-  p {
-    text-align: left;
-    margin: 5px 0 15px 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
-    line-height: 1.5rem;
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
   }
+}
 
-  dl {
-    margin: 5px 0 15px 0;
+/* Headings */
+h3 {
+  color: #bf9663;
+  border: 2px solid #567355;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #nav {
+    grid-template-columns: 1fr;
   }
 }
 
 /* Footer */
 footer {
-  color: #f2cda0;
-  height: 25px;
-
   a {
-    color: #f2cda0;
-  }
-}
-
-/* Footer heading */
-#footer {
-  h6 {
-    font-size: 12px;
-    line-height: 25px;
-    margin: 0 20px;
+    color: #bf9663;
   }
 }
