@@ -8,6 +8,13 @@
 body {
   font-family: "Lato", sans-serif;
   color: white;
+
+  background:
+    radial-gradient(circle at 20% 10%, rgba(168, 85, 247, 0.4), transparent 35%),
+  radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.3), transparent 45%),
+  linear-gradient(180deg, #020004 0%, #0a0014 40%, #240046 100%);
+
+  min-height: 100vh;
 }
 
 /* CENTERED PAGE WRAPPER */
@@ -19,9 +26,13 @@ body {
 }
 
 /* HEADER */
+
+
+
 .site-header {
   position: sticky;
   top: 0;
+  z-index: 1000;
   background: rgba(0,0,0,0.9);
   padding: 20px;
 
@@ -34,10 +45,47 @@ body {
   font-family: "Love Ya Like A Sister", cursive;
 }
 
-.nav {
-  margin-top: auto;  
+.site-header img {
+  width: 140px;
+  height: auto;
+  margin: 10px auto;
+  display: block;
 }
 
+.site-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.nav {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav a {
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+  background: linear-gradient(135deg, #4c1d95, #1e3a8a);
+  color: #e0e7ff;
+  text-decoration: none;
+
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+/* hover effect */
+.nav a:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 10px rgba(124, 58, 237, 0.6),
+    0 0 20px rgba(59, 130, 246, 0.4);
+}
 
 h2, h3, h4
 {font-family: "Love Ya Like A Sister", cursive;
@@ -49,6 +97,10 @@ h2, h3, h4
   text-align: center;
 }
 
+.section h2 {
+  font-size: 2.8rem;
+}
+
 /* CARDS */
 .card-grid {
   display: grid;
@@ -57,25 +109,113 @@ h2, h3, h4
   margin-top: 20px;
 }
 
-.card {
-  font-family: "Chathura", sans-serif;
-  font-size: 2rem;
-  background: #1b1b2e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #333;
-  transition: transform 0.3s;
-}
 
 .card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+
   text-align: center;
+  font-family: "Chathura", sans-serif;
+  font-size: 2rem;
+
+  background: linear-gradient(
+    145deg,
+    rgba(36, 0, 70, 0.6),
+    rgba(10, 0, 20, 0.6)
+  );
+
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(88, 28, 135, 0.6);
+  cursor: pointer;
+
+  transition: all 0.3s ease;
 }
 
+
 .card:hover {
+  transform: translateY(-6px);
+
+  
+  border-color: #a78bfa;
+
+  
+  box-shadow:
+    0 0 10px rgba(167, 139, 250, 0.4),
+    0 0 20px rgba(167, 139, 250, 0.2);
+}
+
+
+
+.card-title {
+  font-weight: bold;
+   color: #c4b5fd; 
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.card-content {
+  opacity: 0;
   transform: translateY(-5px);
+  height: 0;
+  overflow: hidden;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.card.active .card-content {
+  opacity: 1;
+  transform: translateY(0);
+  height: auto;
+  overflow: visible;
+  pointer-events: auto;
+}
+
+
+
+
+.card-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  object-fit: cover;
+
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.card.active .card-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card-img {
+  width: 80%;
+  max-width: 250px;
+
+  display: block;
+  margin: 12px auto;
+
+  border-radius: 8px;
+
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+
+
+
+/* when open */
+.card.active .card-img {
+  max-height: 150px;
+  margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -101,6 +241,42 @@ h2, h3, h4
   }
   .nav {font-size: 1.2rem;}
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form input,
+.form select,
+.form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  background: rgba(10, 0, 20, 0.6);
+  color: white;
+  font-size: 1rem;
+}
+
+.form button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #4c1d95, #1e3a8a);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+}
+
 
 @media screen and (min-width: 1100px) {
   .card-grid {

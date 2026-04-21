@@ -1,10 +1,19 @@
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
+const cards = document.querySelectorAll('.card');
 
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+cards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    const isActive = card.classList.contains('active');
+
+    cards.forEach(c => c.classList.remove('active'));
+
+    if (!isActive) {
+      card.classList.add('active');
     }
   });
+});
+
+document.addEventListener('click', () => {
+  cards.forEach(card => card.classList.remove('active'));
 });
