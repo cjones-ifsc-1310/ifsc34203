@@ -25,9 +25,15 @@ body {
 }
 
 img {
+ width:100%;
+ height:auto;
+  display: block;
+}
+
+.logo {
   max-width: 250px;
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px auto;
 }
 /* =========================
    HEADINGS
@@ -39,13 +45,16 @@ h3{font-size:2rem;}
 /* =========================
    LAYOUT
 ========================= */
+
+
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   padding: 0 20px;
 }
 
 .section {
+   position: relative;
   text-align: center;
   padding: 120px 20px;
   border-bottom: 1px solid rgba(167, 139, 250, 0.2);
@@ -72,21 +81,20 @@ h3{font-size:2rem;}
 .site-header {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 100%;
-  max-width: 1000px;
+  z-index: 1000;
 
   background: rgba(0,0,0,0.65);
   backdrop-filter: blur(10px);
 
-  padding: 20px;
-  z-index: 1000;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 10px 0;
 }
+
 
 .site-header h1 {
   font-size: 3rem;
@@ -106,37 +114,80 @@ h3{font-size:2rem;}
    NAV (FIXED HAMBURGER SYSTEM)
 ========================= */
 
+/* =========================
+   OFF-CANVAS LEFT MENU
+========================= */
+
 .nav {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+
+  background: rgba(10, 0, 20, 0.92);
+  backdrop-filter: blur(12px);
+
+  display: flex;
   flex-direction: column;
-  gap: 10px;
   align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+
+  padding-top: 100px;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  z-index: 1500;
+
+  border-right: 1px solid rgba(167, 139, 250, 0.2);
 }
 
-/* OPEN STATE */
 .nav.active {
-  display: flex;
+  transform: translateX(0);
 }
 
 /* PILL BUTTONS (RESTORED) */
 .nav a {
-  display: inline-flex;
+  width: 80%;
+  padding: 12px 16px;
+
+  border-radius: 999px;
+
+  display: flex;
   justify-content: center;
   align-items: center;
-
-  min-width: 160px;
-  padding: 10px 16px;
-  border-radius: 999px;
 
   background: linear-gradient(135deg, #4c1d95, #1e3a8a);
   color: #e0e7ff;
   text-decoration: none;
 
-  transition: 0.3s;
+  font-weight: 500;
+
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .nav a:hover {
-  transform: translateY(-2px);
+  transform: translateX(6px);
+  background: linear-gradient(135deg, #5b21b6, #1d4ed8);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  z-index: 1400;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* DESKTOP FIX (IMPORTANT: keep pills, not row collapse) */
@@ -144,30 +195,60 @@ h3{font-size:2rem;}
   .menu-toggle {
     display: none;
   }
-
-  .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap; /* prevents collapsing into one ugly row */
-  }
 }
 
  
 /* =========================
    GRID (FIXED)
 ========================= */
-.card-grid {
+#positions .card-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin-top: 30px;
-  align-items: start; /* IMPORTANT FIX */
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 12px;
+  row-gap: 12px;
+
+  align-items: start;
+  justify-items: center;
 }
+
+#locations .card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 24px;
+max-width:700px;
+margin:0 auto;
+  align-items: start;
+  justify-items: center;
+}
+
+
+#home .card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 24px;
+
+  align-items: start;
+  justify-items: center;
+}
+
 
 @media (min-width: 768px) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -178,11 +259,38 @@ h3{font-size:2rem;}
   background: rgba(20, 10, 40, 0.6);
   border: 1px solid rgba(167, 139, 250, 0.3);
   border-radius: 12px;
-  padding: 20px;
-  cursor: pointer;
+  padding: 18px;
+
+  width: 100%;
+margin:10px auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   text-align: center;
+  cursor: pointer;
+
   transition: transform 0.3s ease;
-  height: fit-content;
+}
+
+#locations .card {
+  background: rgba(20, 10, 40, 0.6);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 12px;
+  padding: 18px;
+
+  max-width:220px;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-align: center;
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
@@ -203,6 +311,7 @@ h3{font-size:2rem;}
   transition: all 0.35s ease;
 }
 
+
 /* OPEN STATE */
 .card.active .card-content {
   max-height: 1000px;
@@ -214,37 +323,71 @@ h3{font-size:2rem;}
 /* IMAGE */
 .card-img {
   width: 100%;
-  max-width: 250px;
+display:block;
   border-radius: 8px;
   cursor: pointer;
+  margin:0 auto;
+}
+.card-img-home {
+  width: 100%;
+display:block;
+  border-radius: 8px;
+  cursor: pointer;
+  margin:0 auto;
 }
 
+#locations .card-img {
+  width: 180px; 
+  max-width:100%;       
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 /* =========================
    LOCATIONS FIX
 ========================= */
 #locations .card {
-  aspect-ratio: 1 / 1;
+               
+  aspect-ratio: 1 / 1;       
+
+  padding: 16px;         
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
 }
 
-#locations .card img {
-  max-width: 70%;
+#locations .card:hover {
+  transform: translateY(-6px) scale(1.03);
 }
-
 /* =========================
    BACK TO TOP
 ========================= */
 .back-to-top {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #4c1d95, #1e3a8a);
+  font-family:Love Ya Like A Sister, cursive;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  background: #e0e7ff(0, 0, 0, 0.6);
   color: #e0e7ff;
+  padding: 10px 14px;
+  border-radius: 999px;
   text-decoration: none;
+  font-size: 14px;
+
+  z-index: 999;
+  transition: opacity 0.3s ease;
 }
+
+/* optional hover effect */
+.back-to-top:hover {
+  background: #e0e7ff(0, 0, 0, 0.85);
+}
+
 
 /* =========================
    IFRAME
@@ -308,9 +451,120 @@ button:focus,
   margin: 10px auto;
   z-index: 2000;
 }
-.nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: nowrap; /* 🔥 prevents 2-row wrap */
+body {
+  padding-top: 80px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 100px;
   }
+}
+
+.info-card {
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 24px 28px;
+
+  background: rgba(20, 10, 40, 0.45);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: 14px;
+
+  backdrop-filter: blur(10px);
+
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+.info-card h3 {
+  margin-bottom: 10px;
+  color: #c4b5fd;
+}
+
+.info-card h4 {
+  margin-bottom: 12px;
+  font-weight: normal;
+  color: #e9d5ff;
+}
+
+.info-card p {
+  line-height: 1.6;
+  color: #f3e8ff;
+}
+
+#locations p {font-size: 1.2rem;
+margin:10px auto;}
+
+.form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 24px;
+
+  background: rgba(20, 10, 40, 0.5);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: 14px;
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+
+  background: rgba(10, 0, 20, 0.6);
+  color: white;
+
+  font-size: 1rem;
+}
+.form label {
+  font-weight: 600;
+  margin-top: 10px;
+  color: #e9d5ff;
+}
+.form button {
+  margin-top: 10px;
+  padding: 12px 16px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #4c1d95, #1e3a8a);
+  color: #e0e7ff;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #5b21b6, #1d4ed8);
+}
+.form p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 5px;
+}
+.form select {
+  margin-bottom: 6px;
+  background-color:#240046;
+  color:#c4b5fd;
+}
+#footer {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  font-size:1.5rem;
+}
+.card-title {font-family:Love Ya Like A Sister, cursive;
+}
