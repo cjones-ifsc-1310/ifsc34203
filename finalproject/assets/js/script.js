@@ -81,7 +81,7 @@ cards.forEach(card => {
     lightboxImg.src = "";
   }
 
-  document.querySelectorAll("#home .card-img").forEach(img => {
+  document.querySelectorAll("#home .card-img-home").forEach(img => {
     img.addEventListener("click", (e) => {
       e.stopPropagation();
       openLightbox(img.src);
