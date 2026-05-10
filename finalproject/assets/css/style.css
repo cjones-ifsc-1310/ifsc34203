@@ -1028,82 +1028,105 @@ button:focus,
 @media (max-width: 600px) {
 
   /* =========================
-     HEADER OFFSET / SECTION SPACING
+     HEADER OFFSET 
   ========================= */
 
   body {
     padding-top: 100px;
   }
 
-  .section {
-    padding: 55px 14px 35px;
-  }
-
-  .section h2,
-  .about-title {
-    padding-top: 0;
-    margin-top: 0;
-    margin-bottom: 18px;
-    font-size: 1.5rem;
-  }
-
-  section,
+ section,
   [id] {
     scroll-margin-top: 110px;
   }
 
-
   /* =========================
-     ABOUT SECTION HIGHER
+     SECTION SPACING 
   ========================= */
 
+ .section {
+    padding: 28px 12px;
+  }
+
+   #home {
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    min-height: auto;
+  }
+
   #about {
-    padding-top: 35px;
+    padding-top: 10px;
+    margin-top: 0;
   }
 
   .about-hero {
-    gap: 20px;
+    gap: 14px;
+  }
+
+   /* =========================
+     BIGGER SECTION TITLES
+  ========================= */
+
+  .section h2,
+  .about-title {
+    font-size: 2.2rem;
+
+    line-height: 1.1;
+
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 14px;
   }
 
 
-  /* =========================
-     VIDEO + PHOENIX LAYOUT
+    /* =========================
+     VIDEO + PHOENIX FIX
   ========================= */
 
   .video-row {
     display: grid;
-    grid-template-columns: 55px 1fr 55px;
+
+    grid-template-columns: 52px 1fr 52px;
 
     align-items: center;
     justify-items: center;
 
-    gap: 6px;
+    gap: 4px;
 
-    max-width: 100%;
+    width: 100%;
+
+    margin-top: 14px;
   }
 
   .side-image {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
+    align-self: center;
+
     margin: 0;
-    padding: 0;
+
+    position: relative;
+    top: 0;
   }
 
   .side-image img {
-    width: 50px;
+    width: 48px;
 
     margin: 0;
 
     padding: 4px;
+
+    display: block;
   }
 
   .video-card {
     width: 100%;
-    max-width: 320px;
+    max-width: 310px;
 
-    margin: 10px auto;
+    margin: 0 auto;
 
     padding: 6px;
   }
@@ -1112,9 +1135,8 @@ button:focus,
     width: 100%;
   }
 
-
-  /* =========================
-     HOME + POSITIONS CARDS
+   /* =========================
+     CARD GRID
   ========================= */
 
   #home .card-grid,
@@ -1124,30 +1146,75 @@ button:focus,
     gap: 12px;
   }
 
+
+  /* =========================
+     CENTER CARD CONTENT
+  ========================= */
+
   #home .card,
-  #positions .card,
+  #positions .card {
+    min-height: 90px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 14px;
+  }
+
+  #home .card .card-title,
+  #positions .card .card-title {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  /* =========================
+     LOCATIONS
+  ========================= */
+
   #locations .card {
     width: 100%;
 
     max-width: 100%;
 
-    min-height: 80px;
+    padding: 14px;
 
     aspect-ratio: auto;
 
-    padding: 14px;
-  }
-
-  #locations .card {
     display: flex;
-    flex-direction: column;
+
     justify-content: center;
     align-items: center;
+
+    text-align: center;
   }
 
   #locations .card-img {
     width: 90px;
     max-width: 100%;
+  }
+
+
+  /* =========================
+     HOVER EFFECTS RESTORED
+  ========================= */
+
+  .card:hover,
+  #locations .card:hover,
+  .slideshow-card:hover,
+  .info-card:hover,
+  .video-card:hover {
+    transform: translateY(-6px) scale(1.02);
+
+    border-color: rgba(196, 181, 253, 0.7);
+
+    box-shadow:
+      0 12px 35px rgba(0, 0, 0, 0.45),
+      0 0 22px rgba(167, 139, 250, 0.25);
   }
 
 
@@ -1164,14 +1231,13 @@ button:focus,
   }
 
   .card-title {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
   }
 
   .logo {
     max-width: 180px;
   }
 }
-
 /* =========================================================
    TABLET
 ========================================================= */
