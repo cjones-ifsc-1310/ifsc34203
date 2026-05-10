@@ -1022,122 +1022,149 @@ button:focus,
 }
 
 /* =========================================================
-   Mobile overrides
+   MOBILE
 ========================================================= */
 
- @media (max-width: 600px) {
+@media (max-width: 600px) {
 
   /* =========================
-     FIX HEADER OVERLAP (THIS IS THE BIG ONE)
+     HEADER OFFSET / SECTION SPACING
   ========================= */
+
   body {
-    padding-top: 100px; /* prevents h2 + text being hidden under fixed header */
+    padding-top: 100px;
   }
 
   .section {
-    padding: 90px 14px 40px; /* reduces giant gaps + fixes home/about spacing */
+    padding: 55px 14px 35px;
   }
 
-  .section h2 {
-    margin-top: 0;
+  .section h2,
+  .about-title {
     padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 18px;
     font-size: 1.5rem;
   }
 
-  section, [id] {
-    scroll-margin-top: 120px;
+  section,
+  [id] {
+    scroll-margin-top: 110px;
   }
 
 
   /* =========================
-     VIDEO + PHOENIX ALIGNMENT FIX
+     ABOUT SECTION HIGHER
   ========================= */
+
+  #about {
+    padding-top: 35px;
+  }
+
+  .about-hero {
+    gap: 20px;
+  }
+
+
+  /* =========================
+     VIDEO + PHOENIX LAYOUT
+  ========================= */
+
   .video-row {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    display: grid;
+    grid-template-columns: 55px 1fr 55px;
+
     align-items: center;
-    gap: 12px;
+    justify-items: center;
+
+    gap: 6px;
+
+    max-width: 100%;
   }
 
   .side-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     margin: 0;
-    align-self: center;
+    padding: 0;
   }
 
   .side-image img {
-    width: 55px;
-    margin: 0 auto;
+    width: 50px;
+
+    margin: 0;
+
+    padding: 4px;
+  }
+
+  .video-card {
+    width: 100%;
+    max-width: 320px;
+
+    margin: 10px auto;
+
+    padding: 6px;
+  }
+
+  .video-card iframe {
+    width: 100%;
   }
 
 
   /* =========================
-     HOME = POSITIONS CARD MATCH SIZE
+     HOME + POSITIONS CARDS
   ========================= */
+
   #home .card-grid,
-  #positions .card-grid {
+  #positions .card-grid,
+  #locations .card-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
   #home .card,
-  #positions .card {
-    min-height: 90px; /* makes them consistent */
-  }
+  #positions .card,
+  #locations .card {
+    width: 100%;
 
+    max-width: 100%;
 
-  /* =========================
-     LOCATIONS FIX (UNIFORM SIZE)
-  ========================= */
-  #locations .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 420px;
-    margin: 0 auto;
-    gap: 12px;
+    min-height: 80px;
+
+    aspect-ratio: auto;
+
+    padding: 14px;
   }
 
   #locations .card {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   #locations .card-img {
-    width: 70%;
-    max-width: 110px;
+    width: 90px;
+    max-width: 100%;
   }
 
-
-  /* =========================
-     GENERAL SPACING TIGHTENING
-  ========================= */
-  .card,
-  .info-card,
-  .slideshow-card,
-  .form {
-    padding: 12px;
-  }
-
-  .logo {
-    max-width: 180px;
-  }
-}
 
   /* =========================
      GENERAL MOBILE TUNING
   ========================= */
- .section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
+
   .card,
   .info-card,
   .slideshow-card,
   .form {
-    padding: 14px;
+    padding: 12px;
+    border-radius: 10px;
   }
 
   .card-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .logo {
@@ -1258,62 +1285,4 @@ button:focus,
     padding: 110px 40px;
   }
 }
-@media (max-width: 600px) {
-  .video-row {
-    grid-template-columns: 60px 1fr 60px;
-    gap: 6px;
-    align-items: center;
-  }
-
-  .side-image {
-    margin-top: 0; /* kills the vertical float issue */
-  }
-
-  .side-image img {
-    width: 55px; /* shrink phoenixes for mobile */
-  }
-}
-@media (max-width: 600px) {
-  .video-card {
-    max-width: 320px;
-    padding: 6px;
-  }
-
-  .video-card iframe {
-    width: 100%;
-  }
-}
-@media (max-width: 600px) {
-  .card,
-  .info-card,
-  .slideshow-card,
-  .form {
-    padding: 12px;
-    border-radius: 10px;
-  }
-
-  .card-title {
-    font-size: 1.3rem;
-  }
-
-  .section {
-    padding: 50px 12px;
-  }
-}
-@media (max-width: 600px) {
-  #locations .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 100%;
-    gap: 10px;
-  }
-
-  #locations .card {
-    max-width: none;
-    aspect-ratio: auto;
-    padding: 10px;
-  }
-
-  #locations p {
-    font-size: 1rem;
-  }
-}
+ 
