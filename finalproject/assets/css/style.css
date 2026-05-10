@@ -1015,6 +1015,84 @@ button:focus,
     border-color 0.35s ease;
 }
 
+/* =========================================================
+   Mobile overrides
+========================================================= */
+
+@media (max-width: 600px) {
+
+  /* =========================
+     VIDEO LAYOUT FIX
+  ========================= */
+  .video-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .side-image {
+    margin-top: 0;
+  }
+
+  .side-image img {
+    width: 60px;
+  }
+
+  .video-card {
+    max-width: 340px;
+    width: 100%;
+    padding: 8px;
+  }
+
+  .video-card iframe {
+    width: 100%;
+  }
+
+
+  /* =========================
+     LOCATIONS GRID FIX
+  ========================= */
+  #locations .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  #locations .card {
+    max-width: none;
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+  }
+
+  #locations .card-img {
+    width: 100%;
+    max-width: 120px;
+  }
+
+
+  /* =========================
+     GENERAL MOBILE TUNING
+  ========================= */
+  .section {
+    padding: 60px 14px;
+  }
+
+  .card,
+  .info-card,
+  .slideshow-card,
+  .form {
+    padding: 14px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    max-width: 180px;
+  }
+}
 
 /* =========================================================
    TABLET
@@ -1124,5 +1202,64 @@ button:focus,
 
   .section {
     padding: 110px 40px;
+  }
+}
+@media (max-width: 600px) {
+  .video-row {
+    grid-template-columns: 60px 1fr 60px;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .side-image {
+    margin-top: 0; /* kills the vertical float issue */
+  }
+
+  .side-image img {
+    width: 55px; /* shrink phoenixes for mobile */
+  }
+}
+@media (max-width: 600px) {
+  .video-card {
+    max-width: 320px;
+    padding: 6px;
+  }
+
+  .video-card iframe {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .card,
+  .info-card,
+  .slideshow-card,
+  .form {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .section {
+    padding: 50px 12px;
+  }
+}
+@media (max-width: 600px) {
+  #locations .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  #locations .card {
+    max-width: none;
+    aspect-ratio: auto;
+    padding: 10px;
+  }
+
+  #locations p {
+    font-size: 1rem;
   }
 }
