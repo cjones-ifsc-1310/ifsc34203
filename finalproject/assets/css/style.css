@@ -1025,63 +1025,102 @@ button:focus,
    Mobile overrides
 ========================================================= */
 
-@media (max-width: 600px) {
+ @media (max-width: 600px) {
 
   /* =========================
-     VIDEO LAYOUT 
+     FIX HEADER OVERLAP (THIS IS THE BIG ONE)
+  ========================= */
+  body {
+    padding-top: 100px; /* prevents h2 + text being hidden under fixed header */
+  }
+
+  .section {
+    padding: 90px 14px 40px; /* reduces giant gaps + fixes home/about spacing */
+  }
+
+  .section h2 {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 1.5rem;
+  }
+
+  section, [id] {
+    scroll-margin-top: 120px;
+  }
+
+
+  /* =========================
+     VIDEO + PHOENIX ALIGNMENT FIX
   ========================= */
   .video-row {
     grid-template-columns: 1fr;
-    gap: 10px;
     justify-items: center;
-  align-items: center;
+    align-items: center;
+    gap: 12px;
   }
 
   .side-image {
-    margin-top: 0;
+    margin: 0;
+    align-self: center;
   }
 
   .side-image img {
-    width: 60px;
-    display: block;
-    margin:auto;
-  }
-
-  .video-card {
-    max-width: 340px;
-    width: 100%;
-    padding: 8px;
-  }
-
-  .video-card iframe {
-    width: 100%;
+    width: 55px;
+    margin: 0 auto;
   }
 
 
   /* =========================
-     LOCATIONS GRID FIX
+     HOME = POSITIONS CARD MATCH SIZE
+  ========================= */
+  #home .card-grid,
+  #positions .card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #home .card,
+  #positions .card {
+    min-height: 90px; /* makes them consistent */
+  }
+
+
+  /* =========================
+     LOCATIONS FIX (UNIFORM SIZE)
   ========================= */
   #locations .card-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 420px;
+    margin: 0 auto;
     gap: 12px;
-   margin: 0 auto;
   }
 
   #locations .card {
-     width: 100%;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 12px;
   }
 
   #locations .card-img {
     width: 70%;
-    max-width: 100px;
-    height: auto;
+    max-width: 110px;
   }
 
+
+  /* =========================
+     GENERAL SPACING TIGHTENING
+  ========================= */
+  .card,
+  .info-card,
+  .slideshow-card,
+  .form {
+    padding: 12px;
+  }
+
+  .logo {
+    max-width: 180px;
+  }
+}
 
   /* =========================
      GENERAL MOBILE TUNING
