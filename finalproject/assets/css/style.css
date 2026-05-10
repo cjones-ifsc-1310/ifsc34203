@@ -1086,12 +1086,12 @@ button:focus,
   .video-row {
     display: grid;
 
-    grid-template-columns: 52px 1fr 52px;
+    grid-template-columns: 44px 1fr 44px;
 
     align-items: center;
     justify-items: center;
 
-    gap: 4px;
+    gap: 2px;
 
     width: 100%;
 
@@ -1113,7 +1113,7 @@ button:focus,
   }
 
   .side-image img {
-    width: 48px;
+    width: 42px;
 
     margin: 0;
 
@@ -1124,11 +1124,11 @@ button:focus,
 
   .video-card {
     width: 100%;
-    max-width: 310px;
+    max-width: 260px;
 
     margin: 0 auto;
 
-    padding: 6px;
+    padding: 4px;
   }
 
   .video-card iframe {
