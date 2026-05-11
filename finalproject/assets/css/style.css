@@ -1151,7 +1151,7 @@ button:focus,
 /* =========================
    TABLET LAYOUT TWEAKS
 ========================= */
-@media (min-width: 601px) and (max-width: 1199px) {
+@media (min-width: 772px) and (max-width: 1199px) {
 
 body { font-size: 16px;
 }
