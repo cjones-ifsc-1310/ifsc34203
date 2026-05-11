@@ -1356,24 +1356,29 @@ body {
 }
 
 
-/* 5. REMOVE EXTRA SPACE ABOVE ABOUT */
 #about {
   padding-top: 20px;
   margin-top: 0;
 }
 
+#positions .card-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
 
-/* 6. TIGHTEN ABOUT -> POSITIONS */
 #positions.section {
   padding-top: 40px;
 }
 
 
-/* 7. TIGHTEN POSITIONS -> EXPECTATIONS */
 #expectations.section {
   padding-top: 40px;
 }
 
+.expectations-grid {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+}
 
 /* 8. ALIGN EXPECTATION TITLES */
 .slideshow-card {
@@ -1382,13 +1387,14 @@ body {
 }
 
 .slideshow-card h3 {
-  min-height: 70px;
+  min-height: 72px;
 
   display: flex;
   align-items: flex-end;
   justify-content: center;
 
   text-align: center;
+  margin-bottom: 14px;
 }
 
 
