@@ -484,10 +484,9 @@ section,
 
 .video-card {
   width: fit-content;
-  max-width: 900px;
-
-  margin: 30px auto;
-
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 10px;
 
   background: rgba(20, 10, 40, 0.55);
@@ -505,8 +504,7 @@ section,
 }
 
 .video-card iframe {
-  width: 560px;
-  max-width: 100%;
+  width: 100%;
 
   aspect-ratio: 16 / 9;
 
@@ -1275,7 +1273,7 @@ button:focus,
    TABLET LAYOUT TWEAKS
 ========================= */
 
-/* 1. CENTER HEADER TITLE */
+
 .site-header {
   justify-content: center;
   align-items: center;
@@ -1302,10 +1300,28 @@ button:focus,
   z-index: 2;
 }
 
+.video-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 90px;
+  align-items: center;
+  justify-items: center;
+  gap: 12px;
+}
+
+.side-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-image img {
+  width: 60px;
+  height: auto;
+}
 
 /* 2. REMOVE GAP UNDER HEADER */
 #home {
-  padding-top: 0;
+  padding-top: 120px;
   margin-top: 0;
 }
 
@@ -1337,6 +1353,9 @@ body {
   line-height: 1.7;
 }
 
+ section {
+  scroll-margin-top: 120px;
+}
 
 /* 4. HOME CARDS FIT ONE ROW */
 #home .card-grid {
