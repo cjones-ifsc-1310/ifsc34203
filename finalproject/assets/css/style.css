@@ -629,7 +629,7 @@ align-self: center;
 }
 
 .about-left {
-  text-align: left;
+  text-align: center;
 }
 
 .about-left p {
@@ -1084,7 +1084,8 @@ button:focus,
   }
 
   .side-image img {
-    width: 42px;   /* RESTORED */
+    width: 80px;
+    max-width:100%;
     padding: 4px;
   }
 
