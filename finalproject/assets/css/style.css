@@ -460,7 +460,7 @@ section,
 
   font-family: Love Ya Like A Sister, cursive;
 
-  background: #e0e7ff(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 
   color: #e0e7ff;
 
@@ -478,7 +478,7 @@ section,
 }
 
 .back-to-top:hover {
-  background: rgba (0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.85);
 }
 
 
@@ -505,15 +505,14 @@ section,
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .video-card iframe {
   width: 100%;
-  max-width:560px;
+  height: 100%;
 
   aspect-ratio: 16 / 9;
-
-  height: auto;
 
   display: block;
 
@@ -1152,7 +1151,7 @@ button:focus,
 /* =========================
    TABLET LAYOUT TWEAKS
 ========================= */
-@media (min-width: 772px) and (max-width: 989px) {
+@media (min-width: 601px) and (max-width: 989px) {
 
 body { font-size: 16px;
 }
@@ -1351,14 +1350,13 @@ margin-bottom: 25px;
 
 }
 
-  #about h2 {
-    font-size:2.5rem;  
-    padding-top: 0;
-    }
+#about h2 {
+  font-size: 2.5rem;
+  padding-top: 0;
+}
 
-  #about .logo {
+#about .logo {
   max-width: 240px;
-
   margin: 10px auto 40px;
 }
 
