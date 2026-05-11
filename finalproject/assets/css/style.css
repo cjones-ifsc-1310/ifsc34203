@@ -483,7 +483,7 @@ section,
 ========================= */
 
 .video-card {
-  width: fit-content;
+  
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -505,6 +505,7 @@ section,
 
 .video-card iframe {
   width: 100%;
+  max-width:560px;
 
   aspect-ratio: 16 / 9;
 
@@ -1302,10 +1303,10 @@ button:focus,
 
 .video-row {
   display: grid;
-  grid-template-columns: 90px 1fr 90px;
+  grid-template-columns: 110px 1fr 110px;
   align-items: center;
   justify-items: center;
-  gap: 12px;
+  gap: 18px;
 }
 
 .side-image {
@@ -1315,8 +1316,8 @@ button:focus,
 }
 
 .side-image img {
-  width: 60px;
-  height: auto;
+  width: 90px;
+  max-width: 100%;
 }
 
 /* 2. REMOVE GAP UNDER HEADER */
