@@ -40,8 +40,9 @@ img {
 }
 
 #home {
-  min-height: 100vh;
- margin-bottom: 0;
+  min-height: auto;
+  margin-bottom: 20px;
+  padding-bottom: 0;
 }
 
 .logo {
@@ -367,7 +368,7 @@ section,
 }
 
 .card.active .card-content {
-  max-height: 500px;
+  max-height: 1000px;
 
   opacity: 1;
 
@@ -1059,10 +1060,6 @@ button:focus,
     padding: 28px 12px;
   }
 
-   #home {
-    padding-bottom: 6px;
-    margin-bottom: 0;
-  }
 
   #about {
     padding-top: 6px;
@@ -1158,7 +1155,7 @@ button:focus,
 .video-card {
   width: 100%;
 
-  max-width: 260px;
+  max-width: 320px;
 
   margin: 0 auto;
 
