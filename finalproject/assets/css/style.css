@@ -161,7 +161,7 @@ section,
 .menu-toggle {
   display: block;
 
-  margin: 10px auto;
+  margin:0;
 
   font-size: 2rem;
 
@@ -490,7 +490,7 @@ section,
   
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
+  margin-bottom: 20px;
   padding: 10px;
 
   background: rgba(20, 10, 40, 0.55);
@@ -1151,7 +1151,7 @@ button:focus,
 /* =========================
    TABLET LAYOUT TWEAKS
 ========================= */
-@media (min-width: 772px) and (max-width: 1199px) {
+@media (min-width: 772px) and (max-width: 989px) {
 
 body { font-size: 16px;
 }
@@ -1212,7 +1212,6 @@ body { font-size: 16px;
 }
 
 
-/* 3. SCALE TYPOGRAPHY */
 body {
   font-size: 18px;
 }
@@ -1238,7 +1237,7 @@ body {
   scroll-margin-top: 120px;
 }
 
-/* 4. HOME CARDS FIT ONE ROW */
+
 #home .card-grid {
   grid-template-columns: repeat(3, 1fr);
 
@@ -1280,7 +1279,7 @@ body {
   align-items: start;
 }
 
-/* 8. ALIGN EXPECTATION TITLES */
+
 .slideshow-card {
   display: flex;
   flex-direction: column;
@@ -1297,14 +1296,10 @@ body {
   margin-bottom: 14px;
 }
 
-
-/* 9. TIGHTEN EXPECTATIONS -> LOCATIONS */
 #locations.section {
   padding-top: 40px;
 }
 
-
-/* 10. LOCATIONS STACK LIKE HOME/POSITIONS */
 #locations .card-grid {
   grid-template-columns: 1fr;
 
@@ -1336,14 +1331,87 @@ body {
    DESKTOP
 ========================================================= */
 
-@media (min-width: 1200px) {
+@media (min-width: 990px) {
+
+  .site-header h1 {
+    font-size: 2.8rem;
+    margin-top:20px;
+  }
+
+  #home h2 {font-size: 2.5rem;
+  padding:0;
+margin-top:25px;
+}
+
+  .section h2{
+font-size: 2.5rem;
+padding-top:0;
+margin-bottom: 25px;
+
+}
+
+  #about h2 {
+    font-size:2.5rem;  
+    padding-top: 0;
+    }
+
+  #about .logo {
+  max-width: 240px;
+
+  margin: 10px auto 40px;
+}
+
+
+.about-left,
+.about-right {
+  position: relative;
+  z-index: 1;
+}
+
+.about-left p {
+  max-width: 500px;
+}
+
+.about-left {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+  .card-title {
+    font-size: 2rem;
+  }
+
+ 
+  h3 {
+    font-size: 2.1rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  h5{font-size:1.5rem;
+  margin-bottom:10px;
+}
 
   #positions .card-grid,
   #home .card-grid,
   #locations .card-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-
+.expectations-grid {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+}
   #locations .card-grid {
     max-width: 700px;
   }
@@ -1359,11 +1427,71 @@ body {
   }
 
   .about-hero {
-    gap: 40px;
+    display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  max-width: 1200px;
+
+  margin: 50px auto 0;
+
+  position: relative;
+
+  align-items: start;
   }
 
-  .section {
-    padding: 110px 40px;
-  }
+  .about-hero::before {
+  content: "";
+display: block;
+  position: absolute;
+
+  top: 10px;
+  bottom: 10px;
+
+  left: 50%;
+
+  width: 2px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(167, 139, 250, 0.9),
+      transparent
+    );
+
+  box-shadow:
+    0 0 14px rgba(167, 139, 250, 0.7),
+    0 0 28px rgba(99, 102, 241, 0.35);
 }
- 
+
+  .section {
+  padding: 80px 40px;
+}
+
+  .slideshow-card {
+    padding-top: 10px;
+  padding-bottom: 12px; 
+  }
+
+.slideshow-card h3 {
+  min-height: 72px;
+margin-top:-30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  text-align: center;
+  margin-bottom: 10px;
+}
+.slideshow {
+    margin-top: 6px;      
+  }
+.menu-toggle {
+  margin-top: -15px;
+}
+ }
