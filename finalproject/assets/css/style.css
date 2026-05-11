@@ -380,9 +380,6 @@ section,
     border-color 0.35s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-}
 
 .card.active {
   position: relative;
@@ -443,13 +440,14 @@ display: flex;
 
   border: 1px solid rgba(167, 139, 250, 0.3);
   border-radius: 12px;
-
+ position: relative;
+  z-index: 1;
   padding: 16px;
 
   max-width: 220px;
 
   aspect-ratio: 1 / 1;
-
+overflow:visible;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -489,7 +487,7 @@ display: flex;
 }
 
 #locations .card:hover {
-  transform: translateY(-6px) scale(1.03);
+   z-index: 999;
 }
 
 
@@ -1065,8 +1063,6 @@ button:focus,
 .side-image img {
   will-change: transform;
 
-  transform: translateZ(0);
-
   backface-visibility: hidden;
 }
 
@@ -1082,7 +1078,7 @@ button:focus,
 
 .hover-label {
   opacity: 0;
-  position: absolute;
+  position: fixed;
   transform: translateY(5px);
   transition: 0.2s ease;
 
@@ -1109,10 +1105,6 @@ button:focus,
   transform: translateY(0);
 }
 
-.card:hover .hover-label {
-  opacity: 1;
-  transform: translateY(0);
-}
 .hover-label {
   backdrop-filter: blur(6px);
 }
