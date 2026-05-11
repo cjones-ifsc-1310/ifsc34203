@@ -1042,122 +1042,64 @@ button:focus,
 
 @media (max-width: 600px) {
 
-  /* =========================
-     HEADER OFFSET 
-  ========================= */
-
   body {
     padding-top: 100px;
+    font-size: 16px;
   }
 
- section,
+  section,
   [id] {
     scroll-margin-top: 110px;
   }
 
-  /* =========================
-     SECTION SPACING 
-  ========================= */
-
- .section {
+  .section {
     padding: 28px 12px;
   }
 
-
-  #about {
-    padding-top: 6px;
+  #home {
+    padding-top: 110px;
     margin-top: 0;
   }
-
-  .about-hero {
-    gap: 14px;
-  }
-
-   /* =========================
-     BIGGER SECTION TITLES
-  ========================= */
 
   .section h2,
   .about-title {
     font-size: 2.4rem;
-
     line-height: 1.1;
-
-    padding-top: 0;
-    margin-top: 0;
     margin-bottom: 14px;
+    padding-top: 0;
   }
 
+  /* =========================
+     VIDEO + PHOENIX (FIXED)
+  ========================= */
 
+  .video-row {
+    grid-template-columns: 1fr;   /* FORCE STACK */
+    gap: 10px;
+    margin: 10px auto 30px;
+  }
 
- /* =========================
-   VIDEO + PHOENIX
-========================= */
+  .side-image {
+    justify-content: center;
+  }
 
-.video-section {
-  max-width: 1000px;
-  margin-bottom: 50px;
-}
+  .side-image img {
+    width: 42px;   /* RESTORED */
+    padding: 4px;
+  }
 
+  .video-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 6px;
+  }
 
-.video-center h2 {
-  margin-bottom: 10px;
-}
+  .video-card iframe {
+    width: 100%;
+  }
 
-.video-center p {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.video-row {
-  display: grid;
-  grid-template-columns: 70px 1fr 70px;
-
-  align-items: center;
-  justify-items: center;
-
-  gap: 12px;
-
-  width: 100%;
-}
-
-.side-image {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  height: 100%;
-}
-
-.side-image img {
-  width: 42px;
-
-  display: block;
-
-  margin: 0 auto;
-
-  padding: 4px;
-}
-
-.video-card {
-  width: 100%;
-
-  max-width: 500px;
-
-  margin: 0 auto;
-
-  padding: 4px;
-}
-
-.video-card iframe {
-  width: 100%;
-
-  display: block;
-}
-
-   /* =========================
-     CARD GRID
+  /* =========================
+     HOME CARDS
   ========================= */
 
   #home .card-grid,
@@ -1167,80 +1109,31 @@ button:focus,
     gap: 12px;
   }
 
-
-  /* =========================
-     CENTER CARD CONTENT
-  ========================= */
-
-  #home .card,
-  #positions .card {
+  #home .card {
     min-height: 90px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
     padding: 14px;
   }
 
-  #home .card .card-title,
-  #positions .card .card-title {
-    width: 100%;
-    text-align: center;
+  .card-title {
+    font-size: 1.45rem;
   }
-
 
   /* =========================
      LOCATIONS
   ========================= */
 
   #locations .card {
-    width: 100%;
-
     max-width: 100%;
-
-    padding: 14px;
-
     aspect-ratio: auto;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
+    padding: 14px;
   }
 
   #locations .card-img {
     width: 90px;
-    max-width: 100%;
   }
 
-
   /* =========================
-     HOVER EFFECTS RESTORED
-  ========================= */
-
-  .card:hover,
-  #locations .card:hover,
-  .slideshow-card:hover,
-  .info-card:hover,
-  .video-card:hover {
-    transform: translateY(-6px) scale(1.02);
-
-    border-color: rgba(196, 181, 253, 0.7);
-
-    box-shadow:
-      0 12px 35px rgba(0, 0, 0, 0.45),
-      0 0 22px rgba(167, 139, 250, 0.25);
-  }
-
-
-  /* =========================
-     GENERAL MOBILE TUNING
+     GENERAL
   ========================= */
 
   .card,
@@ -1249,10 +1142,6 @@ button:focus,
   .form {
     padding: 12px;
     border-radius: 10px;
-  }
-
-  .card-title {
-    font-size: 1.45rem;
   }
 
   .logo {
@@ -1310,7 +1199,7 @@ body { font-size: 16px;
   max-width: 100%;
 }
 
-/* 2. REMOVE GAP UNDER HEADER */
+
 #home {
   padding-top: 120px;
   margin-top: 0;
