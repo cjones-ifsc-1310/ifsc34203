@@ -1271,82 +1271,158 @@ button:focus,
     max-width: 180px;
   }
 }
-/* =========================================================
-   TABLET
-========================================================= */
+/* =========================
+   TABLET LAYOUT TWEAKS
+========================= */
 
-@media (min-width: 768px) {
+/* 1. CENTER HEADER TITLE */
+.site-header {
+  justify-content: center;
+  align-items: center;
+}
 
-  body {
-    padding-top: 100px;
-  }
+.site-header h1 {
+  width: 100%;
+  text-align: center;
 
-  .menu-toggle {
-    display: block;
+  font-size: 2.5rem;
+
+  position: relative;
+  z-index: 1;
+}
+
+.menu-toggle {
   position: absolute;
-  left: 16px;
-  top: 30px;
-  }
 
-  #positions .card-grid,
-  #home .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  left: 20px;
+  top: 50%;
 
-  #locations .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 500px;
-  }
+  transform: translateY(-50%);
 
-  .expectations-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  z-index: 2;
+}
 
-  .video-row {
-    grid-template-columns: 100px 1fr 100px;
-    gap: 10px;
-  }
 
-  .about-hero {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
+/* 2. REMOVE GAP UNDER HEADER */
+#home {
+  padding-top: 0;
+  margin-top: 0;
+}
 
-  .about-hero::before {
-    content: "";
+#home h2 {
+  padding-top: 0;
+  margin-top: 0;
+}
 
-    position: absolute;
 
-    left: 50%;
-    top: 10%;
-    bottom: 10%;
+/* 3. SCALE TYPOGRAPHY */
+body {
+  font-size: 18px;
+}
 
-    width: 2px;
+.section h2,
+.about-title {
+  font-size: 3rem;
+  line-height: 1.1;
+}
 
-    transform: translateX(-50%);
+.card-title {
+  font-size: 1.9rem;
+}
 
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(167, 139, 250, 0.4),
-      rgba(99, 102, 241, 0.3),
-      transparent
-    );
+.section p,
+.info-card p,
+.form p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
 
-    filter: blur(1px);
 
-    opacity: 0.7;
+/* 4. HOME CARDS FIT ONE ROW */
+#home .card-grid {
+  grid-template-columns: repeat(3, 1fr);
 
-    display: block;
-  }
+  gap: 12px;
+}
 
-  .translation-card h3 {
-    white-space: nowrap;
-  }
+#home .card {
+  min-height: 75px;
 
-  .section {
-    padding: 100px 20px;
-  }
+  padding: 12px;
+}
+
+#home .card-title {
+  font-size: 1.45rem;
+}
+
+
+/* 5. REMOVE EXTRA SPACE ABOVE ABOUT */
+#about {
+  padding-top: 20px;
+  margin-top: 0;
+}
+
+
+/* 6. TIGHTEN ABOUT -> POSITIONS */
+#positions.section {
+  padding-top: 40px;
+}
+
+
+/* 7. TIGHTEN POSITIONS -> EXPECTATIONS */
+#expectations.section {
+  padding-top: 40px;
+}
+
+
+/* 8. ALIGN EXPECTATION TITLES */
+.slideshow-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.slideshow-card h3 {
+  min-height: 70px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* 9. TIGHTEN EXPECTATIONS -> LOCATIONS */
+#locations.section {
+  padding-top: 40px;
+}
+
+
+/* 10. LOCATIONS STACK LIKE HOME/POSITIONS */
+#locations .card-grid {
+  grid-template-columns: 1fr;
+
+  max-width: 500px;
+
+  gap: 16px;
+}
+
+#locations .card {
+  aspect-ratio: auto;
+
+  max-width: 100%;
+
+  min-height: 90px;
+
+  padding: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#locations .card-img {
+  width: 100px;
 }
 
 
