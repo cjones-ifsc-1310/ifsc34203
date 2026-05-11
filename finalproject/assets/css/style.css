@@ -289,7 +289,18 @@ section,
 
 #home .card,
 #positions .card {
-  min-height: 70px;
+  min-height: 90px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  gap: 6px;
 }
 
 /* =========================
@@ -1049,13 +1060,12 @@ button:focus,
   }
 
    #home {
-    padding-bottom: 10px;
+    padding-bottom: 6px;
     margin-bottom: 0;
-    min-height: auto;
   }
 
   #about {
-    padding-top: 10px;
+    padding-top: 6px;
     margin-top: 0;
   }
 
@@ -1069,7 +1079,7 @@ button:focus,
 
   .section h2,
   .about-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
 
     line-height: 1.1;
 
@@ -1083,57 +1093,84 @@ button:focus,
      VIDEO + PHOENIX FIX
   ========================= */
 
-  .video-row {
-    display: grid;
+ /* =========================
+   VIDEO + PHOENIX FIX
+========================= */
 
-    grid-template-columns: 44px 1fr 44px;
+.video-row {
+  display: grid;
 
-    align-items: center;
-    justify-items: center;
+  grid-template-columns: 44px 1fr 44px;
 
-    gap: 2px;
+  align-items: center;
 
-    width: 100%;
+  gap: 6px;
 
-    margin-top: 14px;
-  }
+  width: 100%;
 
-  .side-image {
-    display: flex;
+  max-width: 100%;
 
-    align-items: center;
-    justify-content: center;
+  margin: 10px auto 20px;
+}
 
-    align-self: center;
+.video-center {
+  display: flex;
 
-    margin: 0;
+  flex-direction: column;
 
-    position: relative;
-    top: 0;
-  }
+  align-items: center;
 
-  .side-image img {
-    width: 42px;
+  justify-content: center;
 
-    margin: 0;
+  gap: 10px;
 
-    padding: 4px;
+  width: 100%;
+}
 
-    display: block;
-  }
+.video-center h2 {
+  margin-bottom: 6px;
+}
 
-  .video-card {
-    width: 100%;
-    max-width: 260px;
+.video-center p {
+  margin-bottom: 0;
 
-    margin: 0 auto;
+  text-align: center;
+}
 
-    padding: 4px;
-  }
+.side-image {
+  display: flex;
 
-  .video-card iframe {
-    width: 100%;
-  }
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}
+
+.side-image img {
+  width: 42px;
+
+  display: block;
+
+  margin: 0 auto;
+
+  padding: 4px;
+}
+
+.video-card {
+  width: 100%;
+
+  max-width: 260px;
+
+  margin: 0 auto;
+
+  padding: 4px;
+}
+
+.video-card iframe {
+  width: 100%;
+
+  display: block;
+}
 
    /* =========================
      CARD GRID
