@@ -98,6 +98,10 @@ h3 {
   border-bottom: 1px solid rgba(167, 139, 250, 0.2);
 }
 
+#home.section {
+  padding-bottom: 90px;
+}
+
 .section:nth-child(even) {
   background: rgba(10, 0, 20, 0.3);
 }
@@ -1092,24 +1096,9 @@ button:focus,
 
 .video-section {
   max-width: 1000px;
-  margin: 0 auto 30px;
+  margin-bottom: 50px;
 }
 
-.video-row {
-  display: grid;
-
-  grid-template-columns: 44px 1fr 44px;
-
-  align-items: center;
-
-  gap: 6px;
-
-  width: 100%;
-
-  max-width: 100%;
-
-  margin: 10px auto 20px;
-}
 
 .video-center h2 {
   margin-bottom: 10px;
@@ -1274,7 +1263,8 @@ button:focus,
    TABLET LAYOUT TWEAKS
 ========================= */
 
-
+body { font-size: 16px;
+}
 .site-header {
   justify-content: center;
   align-items: center;
