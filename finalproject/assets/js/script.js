@@ -31,11 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =========================
-   ACCORDION 
-========================== */
 /* =========================
-   ACCORDION (POSITIONS ONLY FIXED)
+   ACCORDION
 ========================= */
 const cards = document.querySelectorAll(".card");
 
@@ -110,26 +107,35 @@ cards.forEach(card => {
   });
 
   /* =========================
-     SLIDESHOWS
-  ========================== */
-  const slideshows = document.querySelectorAll(".slideshow");
+   SLIDESHOWS
+========================= */
+const slideshows = document.querySelectorAll(".slideshow");
 
-  slideshows.forEach(slideshow => {
-    const slides = slideshow.querySelectorAll(".slide");
-    let index = 0;
+slideshows.forEach(slideshow => {
+  const slides = slideshow.querySelectorAll(".slide");
+  let index = 0;
 
-    setInterval(() => {
-      if (!slides.length) return;
+  setInterval(() => {
+    if (!slides.length) return;
 
-      slides[index].classList.remove("active");
-      index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
 
-    }, 3000);
+  }, 3000);
+});
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+const backToTopBtn = document.querySelector(".back-to-top");
+
+backToTopBtn?.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
   });
 
-});
-/* =========================
-     TOOLTIPS
-  ========================== */
-  
