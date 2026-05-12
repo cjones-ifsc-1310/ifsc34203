@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Metrophobic&display=swap" rel="stylesheet">
+  <style>
+
+  /* =========================
+     BASE TYPOGRAPHY
+  ========================== */
+  h1 {
+    text-align: center;
+  }
+
+  body {
+    background-color: #240046;
+    color: #d9c7ff;
+  }
+
+  /* =========================
+     NAV
+  ========================== */
+  .custom-nav {
+    background-color: #d9c7ff;
+  }
+
+  .custom-nav .nav-link {
+    color: #3b1b5a;
+    font-weight: 600;
+  }
+
+  .custom-nav .nav-link:hover {
+    color: #240046;
+  }
+
+  /* =========================
+     CARDS
+  ========================== */
+  .custom-card {
+    background-color: #d9c7ff;
+    border: none;
+    color: #3b1b5a;
+  }
+
+  /* =========================
+     BACK TO TOP
+  ========================== */
+  .back-to-top {
+    background-color: #d9c7ff;
+    color: #3b1b5a;
+    border: 1px solid #3b1b5a;
+    font-weight: bold;
+    border-radius: 999px;
+    padding: 10px 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .back-to-top:hover {
+    background-color: #3b1b5a;
+    color: #d9c7ff;
+    transform: translateY(-3px);
+  }
+
+  /* =========================
+     HERO SECTION (CLEANED)
+  ========================== */
+  .video-frame {
+    max-width: 480px;
+    margin: 0 auto;
+
+  }
+
+  .video-frame iframe {
+    width: 100%;
+    height: 340px;
+    border: none;
+    display: block;
+    padding-top:40px;
+  }
+
+
+
+  .hero-row {
+    align-items: center;
+  }
+
+
+  .hero-row .col-md-2 {
+    text-align: center;
+  }
+  
+  #footer{font-family: "Love Ya Like A Sister", cursive;
+  text-align:center;
+}
+
+  /* =========================
+     DIVIDER
+  ========================== */
+  .home-divider {
+    height: 2px;
+    background: #d9c7ff;
+    opacity: 0.4;
+    margin-top: 40px;
+  }
+
+  </style>
+</head>
+
+<body>
+
+<main>
+
+  <header>
+    <h1>VXV Events Volunteer SignUp</h1>
+
+    <ul class="nav justify-content-center p-3 custom-nav">
+      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Positions</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Expectations</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Locations</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Signup</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- HERO -->
+  <section class="container py-4 home-section">
+
+    <div class="row text-center align-items-center">
+
+      <div class="col-md-4">
+        <img src="assets/img/phoenixr.png" class="img-fluid" alt="Phoenix">
+      </div>
+
+      <div class="col-md-4">
+        <div class="video-frame">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1119500716922671%2F&show_text=false&t=0"
+            scrolling="no"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <img src="assets/img/phoenixl.png" class="img-fluid" alt="Phoenix">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CARDS -->
+  <section class="container py-4">
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card custom-card">
+          <img src="assets/img/teammates.jpg" class="card-img-top" alt="exciting">
+          <div class="card-body">
+            <h5 class="card-title">Exciting Work</h5>
+            <p class="card-text">Be at the heart of convention action and help create unforgettable experiences.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card custom-card">
+          <img src="assets/img/perks.jpg" class="card-img-top" alt="perks">
+          <div class="card-body">
+            <h5 class="card-title">Great Perks</h5>
+            <p class="card-text">Enjoy exclusive access, behind-the-scenes perks, and special guest opportunities.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card custom-card">
+          <img src="assets/img/crew.jpg" class="card-img-top" alt="team">
+          <div class="card-body">
+            <h5 class="card-title">Amazing Team</h5>
+            <p class="card-text">Meet fellow fans, build friendships, and be part of an incredible community.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="home-divider"></div>
+
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<footer id="footer">
+  <h5>&copy; 2026 Christine Jones <3 </h5>
+  
+</footer>
+<a href="#" class="btn back-to-top position-fixed bottom-0 end-0 m-3">
+  ↑ Top
+</a>
+
+</body>
+</html>
