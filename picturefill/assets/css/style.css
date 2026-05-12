@@ -1,0 +1,64 @@
+html {
+  background-color: #1A2E4F;
+
+  font-size: 2rem;
+  
+}
+
+.container {
+  margin: auto;
+  
+}
+
+section {
+height: 380px;
+width: 380px;
+margin-top: 40px;
+margin-right: auto;
+margin-bottom: 40px;
+margin-left: auto;
+padding: 10px;
+}
+
+h1{text-align: center;
+color:#DE9A33;}
+
+#footer {
+  margin-top: 20px;
+color:#DE9A33;
+  padding: 20px;
+
+  text-align: center;
+
+  font-size: 1.5rem;
+
+  font-family:"Love Ya Like A Sister", cursive;
+}
+
+@media only screen and (min-width: 600px){
+
+  section {
+  height: 600px;
+  width: 600px;
+  padding: 10px;
+}
+}
+@media only screen and (min-width: 768px) {
+section {
+  height: 768px;
+  width: 768px;
+  padding: 10px;
+}
+}
+@media only screen and (min-width: 1024px) {
+section {
+  max-width: 1024px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}}
