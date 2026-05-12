@@ -425,7 +425,7 @@ display: flex;
 .card-img,
 .card-img-home {
   width: 100%;
-
+height: auto;
   display: block;
 
   border-radius: 8px;
@@ -967,6 +967,7 @@ align-self: center;
   text-align: center;
 
   font-size: 1.5rem;
+  
 }
 
 #locations p {
@@ -1116,10 +1117,8 @@ button:focus,
 
   font-size: 0.9rem;
 
-  /* LIGHT PURPLE BACKGROUND */
-  background: #d9c7ff;   /* adjust if your site uses a slightly different lavender */
-  
-  /* DARK PURPLE TEXT */
+  background: #d9c7ff;   
+
   color: #3b1b5a;
 
   padding: 6px 10px;
@@ -1128,7 +1127,7 @@ button:focus,
   white-space: nowrap;
   pointer-events: none;
 
-  /* optional polish */
+
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
